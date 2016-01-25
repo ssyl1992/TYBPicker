@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5C9989C1C506CC000FE6E9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9989B1C506CC000FE6E9E /* main.m */; };
+		B5C9989F1C506CC000FE6E9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9989E1C506CC000FE6E9E /* AppDelegate.m */; };
+		B5C998A21C506CC000FE6E9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C998A11C506CC000FE6E9E /* ViewController.m */; };
+		B5C998A51C506CC000FE6E9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C998A31C506CC000FE6E9E /* Main.storyboard */; };
+		B5C998A71C506CC000FE6E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C998A61C506CC000FE6E9E /* Assets.xcassets */; };
+		B5C998AA1C506CC000FE6E9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C998A81C506CC000FE6E9E /* LaunchScreen.storyboard */; };
+		B5C998B41C5077CD00FE6E9E /* TYBPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C998B31C5077CD00FE6E9E /* TYBPickView.m */; };
+		B5C998B61C50782B00FE6E9E /* TYBPickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C998B51C50782B00FE6E9E /* TYBPickView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B5C998971C506CC000FE6E9E /* TYBDatePickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYBDatePickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C9989B1C506CC000FE6E9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5C9989D1C506CC000FE6E9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B5C9989E1C506CC000FE6E9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B5C998A01C506CC000FE6E9E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B5C998A11C506CC000FE6E9E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B5C998A41C506CC000FE6E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5C998A61C506CC000FE6E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5C998A91C506CC000FE6E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5C998AB1C506CC000FE6E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5C998B21C5077CD00FE6E9E /* TYBPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBPickView.h; sourceTree = "<group>"; };
+		B5C998B31C5077CD00FE6E9E /* TYBPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBPickView.m; sourceTree = "<group>"; };
+		B5C998B51C50782B00FE6E9E /* TYBPickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TYBPickView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5C998941C506CC000FE6E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5C9988E1C506CC000FE6E9E = {
+			isa = PBXGroup;
+			children = (
+				B5C998991C506CC000FE6E9E /* TYBDatePickerDemo */,
+				B5C998981C506CC000FE6E9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5C998981C506CC000FE6E9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5C998971C506CC000FE6E9E /* TYBDatePickerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5C998991C506CC000FE6E9E /* TYBDatePickerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B5C998B11C506CD000FE6E9E /* TYBDatePicker */,
+				B5C9989D1C506CC000FE6E9E /* AppDelegate.h */,
+				B5C9989E1C506CC000FE6E9E /* AppDelegate.m */,
+				B5C998A01C506CC000FE6E9E /* ViewController.h */,
+				B5C998A11C506CC000FE6E9E /* ViewController.m */,
+				B5C998A31C506CC000FE6E9E /* Main.storyboard */,
+				B5C998A61C506CC000FE6E9E /* Assets.xcassets */,
+				B5C998A81C506CC000FE6E9E /* LaunchScreen.storyboard */,
+				B5C998AB1C506CC000FE6E9E /* Info.plist */,
+				B5C9989A1C506CC000FE6E9E /* Supporting Files */,
+			);
+			path = TYBDatePickerDemo;
+			sourceTree = "<group>";
+		};
+		B5C9989A1C506CC000FE6E9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5C9989B1C506CC000FE6E9E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5C998B11C506CD000FE6E9E /* TYBDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B5C998B21C5077CD00FE6E9E /* TYBPickView.h */,
+				B5C998B31C5077CD00FE6E9E /* TYBPickView.m */,
+				B5C998B51C50782B00FE6E9E /* TYBPickView.xib */,
+			);
+			path = TYBDatePicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5C998961C506CC000FE6E9E /* TYBDatePickerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5C998AE1C506CC000FE6E9E /* Build configuration list for PBXNativeTarget "TYBDatePickerDemo" */;
+			buildPhases = (
+				B5C998931C506CC000FE6E9E /* Sources */,
+				B5C998941C506CC000FE6E9E /* Frameworks */,
+				B5C998951C506CC000FE6E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TYBDatePickerDemo;
+			productName = TYBDatePickerDemo;
+			productReference = B5C998971C506CC000FE6E9E /* TYBDatePickerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5C9988F1C506CC000FE6E9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "滕跃兵";
+				TargetAttributes = {
+					B5C998961C506CC000FE6E9E = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 23M4K6PPH6;
+					};
+				};
+			};
+			buildConfigurationList = B5C998921C506CC000FE6E9E /* Build configuration list for PBXProject "TYBDatePickerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5C9988E1C506CC000FE6E9E;
+			productRefGroup = B5C998981C506CC000FE6E9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5C998961C506CC000FE6E9E /* TYBDatePickerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5C998951C506CC000FE6E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C998AA1C506CC000FE6E9E /* LaunchScreen.storyboard in Resources */,
+				B5C998B61C50782B00FE6E9E /* TYBPickView.xib in Resources */,
+				B5C998A71C506CC000FE6E9E /* Assets.xcassets in Resources */,
+				B5C998A51C506CC000FE6E9E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5C998931C506CC000FE6E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C998A21C506CC000FE6E9E /* ViewController.m in Sources */,
+				B5C998B41C5077CD00FE6E9E /* TYBPickView.m in Sources */,
+				B5C9989F1C506CC000FE6E9E /* AppDelegate.m in Sources */,
+				B5C9989C1C506CC000FE6E9E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5C998A31C506CC000FE6E9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5C998A41C506CC000FE6E9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5C998A81C506CC000FE6E9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5C998A91C506CC000FE6E9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5C998AC1C506CC000FE6E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5C998AD1C506CC000FE6E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5C998AF1C506CC000FE6E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TYBDatePickerDemo",
+				);
+				INFOPLIST_FILE = TYBDatePickerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = Danshili.TYBDatePickerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B5C998B01C506CC000FE6E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TYBDatePickerDemo",
+				);
+				INFOPLIST_FILE = TYBDatePickerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = Danshili.TYBDatePickerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5C998921C506CC000FE6E9E /* Build configuration list for PBXProject "TYBDatePickerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C998AC1C506CC000FE6E9E /* Debug */,
+				B5C998AD1C506CC000FE6E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5C998AE1C506CC000FE6E9E /* Build configuration list for PBXNativeTarget "TYBDatePickerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C998AF1C506CC000FE6E9E /* Debug */,
+				B5C998B01C506CC000FE6E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5C9988F1C506CC000FE6E9E /* Project object */;
+}
