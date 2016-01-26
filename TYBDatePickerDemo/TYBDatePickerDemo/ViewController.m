@@ -31,8 +31,10 @@
     self.picker = [[TYBPickView alloc]init];
     _picker.confirmDelegate = self;
     _picker.pickerMode = TYBPickViewTypeCustom;
-    _picker.delegate = self;
-    _picker.dataSource = self;
+    if (self.picker.pickerMode == TYBPickViewTypeCustom) {
+        _picker.delegate = self;
+        _picker.dataSource = self;
+    }
     _picker.title = @"城市选择";
     
     [self.view addSubview:_picker];
@@ -65,9 +67,15 @@
 }
 - (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
     
-    NSInteger index1 = [_picker selectedRowInComponent:1];
-    NSInteger index2 = [_picker selectedRowInComponent:0];
-    NSLog(@"%@,%@",_cities[index2],_cities[index1]);
+   
+    if (self.picker.pickerMode == TYBPickViewTypeCustom) {
+        NSInteger index1 = [_picker selectedRowInComponent:1];
+        NSInteger index2 = [_picker selectedRowInComponent:0];
+        NSLog(@"%@,%@",_cities[index2],_cities[index1]);
+    }else{
+         NSLog(@"%@",data);
+    }
+  
 }
 
 // 当用户点击非picker区域时,退出
