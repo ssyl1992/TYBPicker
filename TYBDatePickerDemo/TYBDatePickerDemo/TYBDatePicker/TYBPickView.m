@@ -12,6 +12,7 @@
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
 
 @interface TYBPickView()
+
 @property (weak, nonatomic) IBOutlet UIDatePicker *datepickView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
@@ -139,8 +140,31 @@
 }
 
 
+#pragma mark --- 用户自定义时实现可以调用的方法
+- (NSInteger)selectedRowInComponent:(NSInteger)component {
+    if(self.pickerMode == TYBPickViewTypeCustom){
+        return [self.pickerView selectedRowInComponent:component];
+    }else{
+        return -1;
+    }
+}
 
-
+- (void)reloadAllComponents {
+    if(self.pickerMode == TYBPickViewTypeCustom){
+         [self.pickerView reloadAllComponents];
+    }
+   
+}
+- (void)reloadComponent:(NSInteger)component {
+    if(self.pickerMode == TYBPickViewTypeCustom){
+    [self.pickerView reloadComponent:component];
+    }
+}
+- (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated{
+    if(self.pickerMode == TYBPickViewTypeCustom){
+    [self.pickerView selectRow:row inComponent:component animated:animated];
+    }
+}
 
 
 

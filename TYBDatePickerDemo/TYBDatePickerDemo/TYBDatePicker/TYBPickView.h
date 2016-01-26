@@ -67,4 +67,20 @@ typedef enum : NSUInteger {
 - (void)hide;
 
 
+
+/**
+ *  用户自定义时,获取选取的行,必须是用户自定义时,否则返回-1
+ *
+ *  @param component 列
+ *
+ *  @return 行下标
+ */
+- (NSInteger)selectedRowInComponent:(NSInteger)component;
+
+// Reloading whole view or single component  用户自定义时
+- (void)reloadAllComponents;
+- (void)reloadComponent:(NSInteger)component;
+// selection. in this case, it means showing the appropriate row in the middle
+- (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated;  // scrolls the specified row to center.
+
 @end

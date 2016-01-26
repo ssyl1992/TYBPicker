@@ -12,19 +12,28 @@
 @interface ViewController ()<UIPickerViewDataSource,UIPickerViewDelegate,TYBPickViewDelegate>
 
 @property (nonatomic, strong) TYBPickView *picker;
+
+@property (nonatomic, strong) NSArray *cities;
+
 @end
 
 @implementation ViewController
 
+- (NSArray *)cities{
+    if (_cities == nil) {
+        _cities = @[@"上海",@"北京",@"广州",@"深圳"];
+    }
+    return _cities;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    self.pickView.showsSelectionIndicator = YES;
     self.picker = [[TYBPickView alloc]init];
     _picker.confirmDelegate = self;
-    _picker.pickerMode = TYBPickViewTypeTime;
+    _picker.pickerMode = TYBPickViewTypeCustom;
     _picker.delegate = self;
     _picker.dataSource = self;
+    _picker.title = @"城市选择";
     
     [self.view addSubview:_picker];
     
@@ -39,24 +48,27 @@
     [_picker show];
 }
 
-- (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
-    NSLog(@"%@",data);
-}
+
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 3;
+    return 2;
 }
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return 3;
+    return self.cities.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return @"111";
+    return _cities[row];
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"%ld")
+    NSLog(@"%ld,%ld",row,component);
 }
-
+- (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
+    
+    NSInteger index1 = [_picker selectedRowInComponent:1];
+    NSInteger index2 = [_picker selectedRowInComponent:0];
+    NSLog(@"%@,%@",_cities[index2],_cities[index1]);
+}
 
 // 当用户点击非picker区域时,退出
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
