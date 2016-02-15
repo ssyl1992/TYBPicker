@@ -53,6 +53,12 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, weak) id<TYBPickViewDelegate> confirmDelegate;
 
+/**
+ *  pickerView的数据
+ */
+
+@property (nonatomic, strong) NSArray<NSArray *> *pickerData;
+
 
 - (instancetype)init;
 

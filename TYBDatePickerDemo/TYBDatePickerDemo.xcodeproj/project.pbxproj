@@ -289,7 +289,7 @@
 				INFOPLIST_FILE = TYBDatePickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = Danshili.TYBDatePickerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Danshili.Picker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -305,7 +305,7 @@
 				INFOPLIST_FILE = TYBDatePickerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = Danshili.TYBDatePickerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Danshili.Picker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

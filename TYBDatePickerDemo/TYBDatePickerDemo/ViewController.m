@@ -21,7 +21,7 @@
 
 - (NSArray *)cities{
     if (_cities == nil) {
-        _cities = @[@"上海",@"北京",@"广州",@"深圳"];
+        _cities = @[@[@"111",@"222"],@[@"上海",@"北京",@"广州",@"深圳"]];
     }
     return _cities;
 }
@@ -31,10 +31,7 @@
     self.picker = [[TYBPickView alloc]init];
     _picker.confirmDelegate = self;
     _picker.pickerMode = TYBPickViewTypeCustom;
-    if (self.picker.pickerMode == TYBPickViewTypeCustom) {
-        _picker.delegate = self;
-        _picker.dataSource = self;
-    }
+    _picker.pickerData = self.cities;
     _picker.title = @"城市选择";
     
     [self.view addSubview:_picker];
@@ -51,27 +48,13 @@
 }
 
 
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 2;
-}
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return self.cities.count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _cities[row];
-}
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"%ld,%ld",row,component);
-}
 - (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
     
    
     if (self.picker.pickerMode == TYBPickViewTypeCustom) {
-        NSInteger index1 = [_picker selectedRowInComponent:1];
-        NSInteger index2 = [_picker selectedRowInComponent:0];
-        NSLog(@"%@,%@",_cities[index2],_cities[index1]);
+        
+        
+        NSLog(@"%@",data);
     }else{
          NSLog(@"%@",data);
     }

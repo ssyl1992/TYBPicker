@@ -11,7 +11,7 @@
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
 
-@interface TYBPickView()
+@interface TYBPickView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datepickView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
@@ -49,22 +49,24 @@
     if (self = [super init]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"TYBPickView" owner:nil options:nil] firstObject];
         self.frame = CGRectMake(0, deviceHeight, deviceWidth, 197);
-       
-        
     }
     return self;
 }
-
-
-- (void)setDataSource:(id<UIPickerViewDataSource>)dataSource {
-    self.pickerView.dataSource = dataSource;
-    
+- (void)setPickerData:(NSArray<NSArray *> *)pickerData{
+    _pickerData = pickerData;
+    [self.pickerView reloadAllComponents];
 }
 
 
-- (void)setDelegate:(id<UIPickerViewDelegate>)delegate {
-    self.pickerView.delegate = delegate;
-}
+//- (void)setDataSource:(id<UIPickerViewDataSource>)dataSource {
+//    self.pickerView.dataSource = dataSource;
+//    
+//}
+//
+//
+//- (void)setDelegate:(id<UIPickerViewDelegate>)delegate {
+//    self.pickerView.delegate = delegate;
+//}
 
 
 - (void)setPickerMode:(TYBPickViewType)pickerMode {
@@ -85,6 +87,8 @@
         case TYBPickViewTypeCustom:
             self.datepickView.hidden = YES;
             self.pickerView.hidden = NO;
+            self.pickerView.delegate = self;
+            self.pickerView.dataSource = self;
             break;
         default:
             break;
@@ -125,7 +129,14 @@
 - (IBAction)confirm:(id)sender {
     
         if (self.pickerMode == TYBPickViewTypeCustom) {
-            [self.confirmDelegate pickView:self didClickButtonConfirm:nil];
+            
+            NSMutableArray *result = [NSMutableArray array];
+            for (int i = 0; i < self.pickerData.count; i++) {
+                int index = (int)[self.pickerView selectedRowInComponent:i];
+                [result addObject:self.pickerData[i][index]];
+            }
+            
+            [self.confirmDelegate pickView:self didClickButtonConfirm:result];
         }else{
             // 时区转换
             NSDate *date=[_datepickView date];
@@ -165,6 +176,22 @@
     [self.pickerView selectRow:row inComponent:component animated:animated];
     }
 }
+
+#pragma mark --- 用户自定义时，pickerview的数据源
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.pickerData ? self.pickerData[component].count : 0;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return self.pickerData ? self.pickerData.count : 0;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.pickerData ? self.pickerData[component][row] : nil;
+}
+
+
+
 
 
 
