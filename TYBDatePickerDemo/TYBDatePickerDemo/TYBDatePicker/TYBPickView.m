@@ -63,10 +63,6 @@ static CGFloat height;
     return self;
 }
 
-//- (instancetype)init {
-//
-//}
-
 - (void)setPickerData:(NSArray<NSArray *> *)pickerData{
     if (pickerData) {
         _pickerData = pickerData;

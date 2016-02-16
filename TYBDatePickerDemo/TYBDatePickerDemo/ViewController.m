@@ -56,10 +56,7 @@
 
 - (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data {
     
-   
     if (self.picker.pickerMode == TYBPickViewTypeCustom) {
-        
-        
         NSLog(@"%@",data);
     }else{
          NSLog(@"%@",data);
