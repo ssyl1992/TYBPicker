@@ -23,9 +23,12 @@ typedef enum : NSUInteger {
 
 @protocol TYBPickViewDelegate <NSObject>
 
+@optional
 - (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data;
 
 @end
+
+
 
 @interface TYBPickView : UIView
 
@@ -42,11 +45,11 @@ typedef enum : NSUInteger {
 /**
  *  用户自定义时,需要设置的属性
  */
-@property (nonatomic, weak) id<UIPickerViewDataSource> dataSource;
+//@property (nonatomic, weak) id<UIPickerViewDataSource> dataSource;
 /**
  *  用户自定义时,需要设置的属性
  */
-@property (nonatomic, weak) id<UIPickerViewDelegate> delegate;
+//@property (nonatomic, weak) id<UIPickerViewDelegate> delegate;
 
 /**
  *  监听点击Confirm按钮的事件
@@ -60,7 +63,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSArray<NSArray *> *pickerData;
 
 
-- (instancetype)init;
+//- (instancetype)init;
 
 /**
  *  弹出

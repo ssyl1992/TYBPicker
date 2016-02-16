@@ -9,7 +9,7 @@
 #import "TYBPickView.h"
 #import "ViewController.h"
 
-@interface ViewController ()<UIPickerViewDataSource,UIPickerViewDelegate,TYBPickViewDelegate>
+@interface ViewController ()<TYBPickViewDelegate>
 
 @property (nonatomic, strong) TYBPickView *picker;
 
@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.picker = [[TYBPickView alloc]init];
     _picker.confirmDelegate = self;
     _picker.pickerMode = TYBPickViewTypeCustom;

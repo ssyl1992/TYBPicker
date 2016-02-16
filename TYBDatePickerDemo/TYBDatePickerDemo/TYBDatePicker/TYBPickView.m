@@ -30,12 +30,11 @@
 
 - (UIView *)maskView {
     if (_maskView == nil) {
-        _maskView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, deviceWidth, deviceHeight-self.frame.size.height)];
+        _maskView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, deviceWidth, deviceHeight)];
         _maskView.backgroundColor =[UIColor colorWithWhite:0.2 alpha:0.3];
     }
     return _maskView;
 }
-
 
 
 - (NSDictionary *)data {
@@ -52,22 +51,13 @@
     }
     return self;
 }
+
 - (void)setPickerData:(NSArray<NSArray *> *)pickerData{
-    _pickerData = pickerData;
-    [self.pickerView reloadAllComponents];
+    if (pickerData) {
+        _pickerData = pickerData;
+        [self.pickerView reloadAllComponents];
+    }
 }
-
-
-//- (void)setDataSource:(id<UIPickerViewDataSource>)dataSource {
-//    self.pickerView.dataSource = dataSource;
-//    
-//}
-//
-//
-//- (void)setDelegate:(id<UIPickerViewDelegate>)delegate {
-//    self.pickerView.delegate = delegate;
-//}
-
 
 - (void)setPickerMode:(TYBPickViewType)pickerMode {
     _pickerMode = pickerMode;
@@ -94,62 +84,56 @@
             break;
     }
 }
+
 - (void)setTitle:(NSString *)title {
-    _title = title;
-    self.titleLable.text = title;
+    if (title) {
+        _title = title;
+        self.titleLable.text = title;
+    }
 }
 
-- (void)show{
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        self.frame = CGRectMake(0, deviceHeight-197, deviceWidth, 197);
-        
-    }completion:^(BOOL finished) {
+- (void)show {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.frame = CGRectMake(0, deviceHeight - 197, deviceWidth, 197);
         [self.superview addSubview:self.maskView];
-        
+    }completion:^(BOOL finished) {
     }];
 }
 
 - (void)hide{
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self.maskView removeFromSuperview];
         self.frame = CGRectMake(0, deviceHeight, deviceWidth, 197);
     }completion:^(BOOL finished) {
-        
     }];
-    
-    
 }
 
 - (IBAction)cancle:(id)sender {
     [self hide];
 }
 
-
 - (IBAction)confirm:(id)sender {
     
-        if (self.pickerMode == TYBPickViewTypeCustom) {
-            
-            NSMutableArray *result = [NSMutableArray array];
-            for (int i = 0; i < self.pickerData.count; i++) {
-                int index = (int)[self.pickerView selectedRowInComponent:i];
-                [result addObject:self.pickerData[i][index]];
-            }
-            
-            [self.confirmDelegate pickView:self didClickButtonConfirm:result];
-        }else{
-            // 时区转换
-            NSDate *date=[_datepickView date];
-            NSTimeZone *timeZone=[NSTimeZone systemTimeZone];
-            NSInteger seconds=[timeZone secondsFromGMTForDate:date];
-            NSDate *newDate=[date dateByAddingTimeInterval:seconds];
-            [self.confirmDelegate pickView:self didClickButtonConfirm:newDate];
+    if (self.pickerMode == TYBPickViewTypeCustom) {
+        
+        NSMutableArray *result = [NSMutableArray array];
+        for (int i = 0; i < self.pickerData.count; i++) {
+            int index = (int)[self.pickerView selectedRowInComponent:i];
+            [result addObject:self.pickerData[i][index]];
         }
-   
+        
+        [self.confirmDelegate pickView:self didClickButtonConfirm:result];
+    }else{
+        // 时区转换
+        NSDate *date=[_datepickView date];
+        NSTimeZone *timeZone=[NSTimeZone systemTimeZone];
+        NSInteger seconds=[timeZone secondsFromGMTForDate:date];
+        NSDate *newDate=[date dateByAddingTimeInterval:seconds];
+        [self.confirmDelegate pickView:self didClickButtonConfirm:newDate];
+    }
     
     [self hide];
 }
-
 
 #pragma mark --- 用户自定义时实现可以调用的方法
 - (NSInteger)selectedRowInComponent:(NSInteger)component {
@@ -164,8 +148,8 @@
     if(self.pickerMode == TYBPickViewTypeCustom){
          [self.pickerView reloadAllComponents];
     }
-   
 }
+
 - (void)reloadComponent:(NSInteger)component {
     if(self.pickerMode == TYBPickViewTypeCustom){
     [self.pickerView reloadComponent:component];
@@ -189,11 +173,5 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return self.pickerData ? self.pickerData[component][row] : nil;
 }
-
-
-
-
-
-
 
 @end
