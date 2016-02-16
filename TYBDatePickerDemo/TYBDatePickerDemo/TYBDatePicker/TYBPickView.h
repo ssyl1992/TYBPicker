@@ -60,7 +60,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIColor *maskViewColor;
 
 
-- (instancetype)initWithMode:(TYBPickViewType)type Target:(id<TYBPickViewDelegate>)target title:(NSString *)title;
+- (instancetype)initWithMode:(TYBPickViewType)type target:(id<TYBPickViewDelegate>)target title:(NSString *)title;
 
 /**
  *  弹出

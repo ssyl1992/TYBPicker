@@ -50,7 +50,7 @@ static CGFloat height;
     return _data;
 }
 
-- (instancetype)initWithMode:(TYBPickViewType)type Target:(id<TYBPickViewDelegate>)target title:(NSString *)title {
+- (instancetype)initWithMode:(TYBPickViewType)type target:(id<TYBPickViewDelegate>)target title:(NSString *)title {
     if (self = [super init]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"TYBPickView" owner:nil options:nil] firstObject];
         height = self.pickerView.frame.size.height+self.titleLable.frame.size.height + self.separatorTop.constant + self.separatorBottom.constant + self.separatorHeight.constant + 2;

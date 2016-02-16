@@ -28,13 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
-    self.picker = [[TYBPickView alloc]initWithMode:TYBPickViewTypeCustom Target:self title:@"城市选择"];
-//    _picker.maskViewColor = [UIColor redColor];
-    _picker.pickerData = self.cities;
-    
+}
+- (IBAction)showTimePicker:(id)sender {
+ 
+    self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeDateAndTime target:self title:@"时间选择"];
     [self.view addSubview:_picker];
-    
+    [self.picker show];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +44,12 @@
 }
 
 - (IBAction)show:(id)sender {
+    
+    self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCustom target:self title:@"城市选择"];
+    //    _picker.maskViewColor = [UIColor redColor];
+    _picker.pickerData = self.cities;
+    
+    [self.view addSubview:_picker];
     [_picker show];
 }
 
