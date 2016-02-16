@@ -15,22 +15,20 @@
 @interface TYBPickView()<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datepickView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
-
-@property (nonatomic, strong) NSDictionary *data;
-
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UIStackView *operationStackView;
 
 //遮罩
 @property (nonatomic, strong) UIView *maskView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *separatorHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *separatorTop;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *separatorBottom;
+@property (nonatomic, strong) NSDictionary *data;
+
+@property (nonatomic, assign) CGFloat height;
 
 @end
 
-static CGFloat height;
 
 @implementation TYBPickView
 
@@ -53,12 +51,11 @@ static CGFloat height;
 - (instancetype)initWithMode:(TYBPickViewType)type target:(id<TYBPickViewDelegate>)target title:(NSString *)title {
     if (self = [super init]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"TYBPickView" owner:nil options:nil] firstObject];
-        height = self.pickerView.frame.size.height+self.titleLable.frame.size.height + self.separatorTop.constant + self.separatorBottom.constant + self.separatorHeight.constant + 2;
-        NSLog(@"%lf",height);
+        self.height = self.pickerView.frame.origin.y - self.operationStackView.frame.origin.y + self.pickerView.frame.size.height;
         self.confirmDelegate = target;
         self.pickerMode = type;
         self.title = title;
-        self.frame = CGRectMake(0, deviceHeight, deviceWidth, height);
+        self.frame = CGRectMake(0, deviceHeight, deviceWidth, self.height);
     }
     return self;
 }
@@ -105,7 +102,7 @@ static CGFloat height;
 
 - (void)show {
     [UIView animateWithDuration:0.3 animations:^{
-        self.frame = CGRectMake(0, deviceHeight - height, deviceWidth, height);
+        self.frame = CGRectMake(0, deviceHeight - self.height, deviceWidth, self.height);
         [self.superview insertSubview:self.maskView belowSubview:self];
     }completion:^(BOOL finished) {
     }];
@@ -114,7 +111,7 @@ static CGFloat height;
 - (void)hide{
     [UIView animateWithDuration:0.3 animations:^{
         [self.maskView removeFromSuperview];
-        self.frame = CGRectMake(0, deviceHeight, deviceWidth, height);
+        self.frame = CGRectMake(0, deviceHeight, deviceWidth, self.height);
     }completion:^(BOOL finished) {
     }];
 }

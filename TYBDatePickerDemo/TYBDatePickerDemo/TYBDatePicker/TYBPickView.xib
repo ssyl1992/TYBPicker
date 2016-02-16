@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -12,6 +12,61 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-Z3-zrd">
+                    <rect key="frame" x="0.0" y="417" width="600" height="33"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbR-nl-KUy">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-WK-aRU">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Gyf-IG-3eR"/>
+                                        <constraint firstAttribute="width" secondItem="g6z-WK-aRU" secondAttribute="height" multiplier="1:1" id="THi-ZE-uZn"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="Cancel_24px_1190738_easyicon.net"/>
+                                    <connections>
+                                        <action selector="cancle:" destination="Dvg-4M-WZn" eventType="touchUpInside" id="R5F-uq-lMG"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl9-gP-RYN">
+                                    <rect key="frame" x="30" y="0.0" width="540" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-38-u5J">
+                                    <rect key="frame" x="570" y="0.0" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="S7N-Kw-gi7"/>
+                                        <constraint firstAttribute="width" secondItem="jO6-38-u5J" secondAttribute="height" multiplier="1:1" id="gdQ-pL-klY"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="confirm_24px_28254_easyicon.net"/>
+                                    <connections>
+                                        <action selector="confirm:" destination="Dvg-4M-WZn" eventType="touchUpInside" id="GFB-er-RcR"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWW-Ty-BAC" userLabel="separator">
+                            <rect key="frame" x="0.0" y="32" width="600" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="oei-if-Si3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="cbR-nl-KUy" firstAttribute="leading" secondItem="pdo-Z3-zrd" secondAttribute="leading" constant="5" id="JfG-9h-Voz"/>
+                        <constraint firstItem="cbR-nl-KUy" firstAttribute="top" secondItem="pdo-Z3-zrd" secondAttribute="top" constant="2" id="h1Z-UU-OQx"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="JfG-9h-Voz"/>
+                            <exclude reference="h1Z-UU-OQx"/>
+                        </mask>
+                    </variation>
+                </stackView>
                 <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flQ-Vm-rR4">
                     <rect key="frame" x="0.0" y="450" width="600" height="150"/>
                     <constraints>
@@ -27,70 +82,23 @@
                         <!--2016-01-21 03:12:37 +0000-->
                     </date>
                 </datePicker>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWW-Ty-BAC" userLabel="separator">
-                    <rect key="frame" x="0.0" y="444" width="600" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="oei-if-Si3"/>
-                    </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-38-u5J">
-                    <rect key="frame" x="565" y="409" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="S7N-Kw-gi7"/>
-                        <constraint firstAttribute="width" secondItem="jO6-38-u5J" secondAttribute="height" multiplier="1:1" id="gdQ-pL-klY"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="confirm_24px_28254_easyicon.net"/>
-                    <connections>
-                        <action selector="confirm:" destination="Dvg-4M-WZn" eventType="touchUpInside" id="GFB-er-RcR"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl9-gP-RYN">
-                    <rect key="frame" x="45" y="413" width="510" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="UcX-5y-vMv"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-WK-aRU">
-                    <rect key="frame" x="5" y="409" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Gyf-IG-3eR"/>
-                        <constraint firstAttribute="width" secondItem="g6z-WK-aRU" secondAttribute="height" multiplier="1:1" id="THi-ZE-uZn"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="Cancel_24px_1190738_easyicon.net"/>
-                    <connections>
-                        <action selector="cancle:" destination="Dvg-4M-WZn" eventType="touchUpInside" id="R5F-uq-lMG"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="g6z-WK-aRU" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" constant="5" id="0Uc-aw-MmZ"/>
-                <constraint firstItem="VWW-Ty-BAC" firstAttribute="top" secondItem="jO6-38-u5J" secondAttribute="bottom" constant="5" id="9en-cE-aXl"/>
+                <constraint firstItem="llI-Ns-ymD" firstAttribute="top" secondItem="pdo-Z3-zrd" secondAttribute="bottom" id="07h-cV-dAO"/>
                 <constraint firstItem="flQ-Vm-rR4" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" id="BSZ-Na-aKh"/>
-                <constraint firstItem="llI-Ns-ymD" firstAttribute="top" secondItem="VWW-Ty-BAC" secondAttribute="bottom" constant="5" id="CFC-Kt-UB6"/>
-                <constraint firstItem="Dl9-gP-RYN" firstAttribute="leading" secondItem="g6z-WK-aRU" secondAttribute="trailing" constant="10" id="ENK-CG-xxk"/>
-                <constraint firstAttribute="trailing" secondItem="VWW-Ty-BAC" secondAttribute="trailing" id="I3F-9b-CMQ"/>
                 <constraint firstAttribute="trailing" secondItem="llI-Ns-ymD" secondAttribute="trailing" id="NZL-gp-CzE"/>
-                <constraint firstItem="VWW-Ty-BAC" firstAttribute="top" secondItem="g6z-WK-aRU" secondAttribute="bottom" constant="5" id="Nmz-5B-hNN"/>
                 <constraint firstItem="llI-Ns-ymD" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" id="OqL-kF-qCb"/>
-                <constraint firstItem="VWW-Ty-BAC" firstAttribute="top" secondItem="Dl9-gP-RYN" secondAttribute="bottom" constant="1" id="WEb-rV-GKQ"/>
+                <constraint firstItem="pdo-Z3-zrd" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" id="PYQ-1n-OrY"/>
                 <constraint firstAttribute="bottom" secondItem="flQ-Vm-rR4" secondAttribute="bottom" id="Xqe-IZ-wS6"/>
-                <constraint firstAttribute="trailing" secondItem="jO6-38-u5J" secondAttribute="trailing" constant="5" id="aZ2-jq-Erc"/>
+                <constraint firstAttribute="trailing" secondItem="pdo-Z3-zrd" secondAttribute="trailing" id="gyJ-D7-9Ux"/>
                 <constraint firstAttribute="trailing" secondItem="flQ-Vm-rR4" secondAttribute="trailing" id="kEr-dC-Vyl"/>
-                <constraint firstItem="VWW-Ty-BAC" firstAttribute="leading" secondItem="Dvg-4M-WZn" secondAttribute="leading" id="p9w-dY-ZWr"/>
-                <constraint firstItem="jO6-38-u5J" firstAttribute="leading" secondItem="Dl9-gP-RYN" secondAttribute="trailing" constant="10" id="uPz-0T-cCR"/>
                 <constraint firstAttribute="bottom" secondItem="llI-Ns-ymD" secondAttribute="bottom" id="zgC-9K-VOR"/>
             </constraints>
             <connections>
                 <outlet property="datepickView" destination="llI-Ns-ymD" id="EpZ-OK-hOI"/>
+                <outlet property="operationStackView" destination="pdo-Z3-zrd" id="K18-3c-t5C"/>
                 <outlet property="pickerView" destination="flQ-Vm-rR4" id="aVi-cm-k7w"/>
-                <outlet property="separatorBottom" destination="CFC-Kt-UB6" id="FSQ-X3-MgY"/>
-                <outlet property="separatorHeight" destination="oei-if-Si3" id="hhk-t2-1gx"/>
-                <outlet property="separatorTop" destination="Nmz-5B-hNN" id="OKk-cJ-XRv"/>
                 <outlet property="titleLable" destination="Dl9-gP-RYN" id="bVM-jd-yri"/>
             </connections>
             <point key="canvasLocation" x="562.5" y="217.5"/>
