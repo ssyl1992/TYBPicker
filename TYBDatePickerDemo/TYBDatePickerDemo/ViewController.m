@@ -29,11 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.picker = [[TYBPickView alloc]init];
-    _picker.confirmDelegate = self;
-    _picker.pickerMode = TYBPickViewTypeCustom;
+    self.picker = [[TYBPickView alloc]initWithMode:TYBPickViewTypeCustom Target:self title:@"城市选择"];
+//    _picker.maskViewColor = [UIColor redColor];
     _picker.pickerData = self.cities;
-    _picker.title = @"城市选择";
     
     [self.view addSubview:_picker];
     

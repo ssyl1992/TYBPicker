@@ -42,14 +42,6 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, copy) NSString *title;
 
-/**
- *  用户自定义时,需要设置的属性
- */
-//@property (nonatomic, weak) id<UIPickerViewDataSource> dataSource;
-/**
- *  用户自定义时,需要设置的属性
- */
-//@property (nonatomic, weak) id<UIPickerViewDelegate> delegate;
 
 /**
  *  监听点击Confirm按钮的事件
@@ -62,8 +54,13 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) NSArray<NSArray *> *pickerData;
 
+/**
+ *  遮罩背景颜色
+ */
+@property (nonatomic, strong) UIColor *maskViewColor;
 
-//- (instancetype)init;
+
+- (instancetype)initWithMode:(TYBPickViewType)type Target:(id<TYBPickViewDelegate>)target title:(NSString *)title;
 
 /**
  *  弹出
@@ -74,6 +71,8 @@ typedef enum : NSUInteger {
  *  隐藏
  */
 - (void)hide;
+
+
 
 
 
