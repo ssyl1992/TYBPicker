@@ -28,8 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Cities.plist" ofType:nil];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"Cities.plist" ofType:nil];
+//    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
 }
 - (IBAction)showTimePicker:(id)sender {
  
