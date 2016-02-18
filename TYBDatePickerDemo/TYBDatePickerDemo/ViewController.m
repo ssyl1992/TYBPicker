@@ -28,8 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Cities.plist" ofType:nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
 }
 - (IBAction)showTimePicker:(id)sender {
  
@@ -45,10 +45,16 @@
 
 - (IBAction)show:(id)sender {
     
-    self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCustom target:self title:@"城市选择"];
-    //    _picker.maskViewColor = [UIColor redColor];
-    _picker.pickerData = self.cities;
+    self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeCity target:self title:@"城市选择"];
+    TYBPickViewCity *city = [[TYBPickViewCity alloc]init];
+    city.provinces = @[@"上海",@"北京"];
+    city.municipalities = @[@"111",@"222"];
+//    city.counties = @[@"aaa",@"bbb"];
     
+    _picker.pickerDataCity = city;
+    
+
+//    _picker.pickerDataCustom = self.cities;
     [self.view addSubview:_picker];
     [_picker show];
 }
@@ -60,6 +66,14 @@
         NSLog(@"%@",data);
     }else{
          NSLog(@"%@",data);
+    }
+  
+}
+
+- (void)pickViewCity:(TYBPickView *)pickView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSLog(@"row=%ld com = %ld",row,component);
+    if (component == 0 && row == 1) {
+          _picker.pickerDataCity.municipalities = @[@"ccc",@"2222",@"3333"];
     }
   
 }

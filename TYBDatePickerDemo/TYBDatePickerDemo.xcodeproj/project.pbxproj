@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		149F71291C755C9F00941AEC /* TYBPickViewCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 149F71281C755C9F00941AEC /* TYBPickViewCity.m */; };
+		14BB33C41C74219200CB1408 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14BB33C31C74219200CB1408 /* Cities.plist */; };
 		B5C9989C1C506CC000FE6E9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9989B1C506CC000FE6E9E /* main.m */; };
 		B5C9989F1C506CC000FE6E9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C9989E1C506CC000FE6E9E /* AppDelegate.m */; };
 		B5C998A21C506CC000FE6E9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C998A11C506CC000FE6E9E /* ViewController.m */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		149F71271C755C9F00941AEC /* TYBPickViewCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYBPickViewCity.h; sourceTree = "<group>"; };
+		149F71281C755C9F00941AEC /* TYBPickViewCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYBPickViewCity.m; sourceTree = "<group>"; };
+		14BB33C31C74219200CB1408 /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 		B5C998971C506CC000FE6E9E /* TYBDatePickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYBDatePickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C9989B1C506CC000FE6E9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5C9989D1C506CC000FE6E9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,7 +95,10 @@
 			children = (
 				B5C998B21C5077CD00FE6E9E /* TYBPickView.h */,
 				B5C998B31C5077CD00FE6E9E /* TYBPickView.m */,
+				149F71271C755C9F00941AEC /* TYBPickViewCity.h */,
+				149F71281C755C9F00941AEC /* TYBPickViewCity.m */,
 				B5C998B51C50782B00FE6E9E /* TYBPickView.xib */,
+				14BB33C31C74219200CB1408 /* Cities.plist */,
 			);
 			path = TYBDatePicker;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 			files = (
 				B5C998AA1C506CC000FE6E9E /* LaunchScreen.storyboard in Resources */,
 				B5C998B61C50782B00FE6E9E /* TYBPickView.xib in Resources */,
+				14BB33C41C74219200CB1408 /* Cities.plist in Resources */,
 				B5C998A71C506CC000FE6E9E /* Assets.xcassets in Resources */,
 				B5C998A51C506CC000FE6E9E /* Main.storyboard in Resources */,
 			);
@@ -168,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C998A21C506CC000FE6E9E /* ViewController.m in Sources */,
+				149F71291C755C9F00941AEC /* TYBPickViewCity.m in Sources */,
 				B5C998B41C5077CD00FE6E9E /* TYBPickView.m in Sources */,
 				B5C9989F1C506CC000FE6E9E /* AppDelegate.m in Sources */,
 				B5C9989C1C506CC000FE6E9E /* main.m in Sources */,

@@ -54,7 +54,7 @@ static CGFloat height;
     if (self = [super init]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"TYBPickView" owner:nil options:nil] firstObject];
         height = self.pickerView.frame.size.height+self.titleLable.frame.size.height + self.separatorTop.constant + self.separatorBottom.constant + self.separatorHeight.constant + 2;
-        NSLog(@"%lf",height);
+        
         self.confirmDelegate = target;
         self.pickerMode = type;
         self.title = title;
@@ -63,12 +63,15 @@ static CGFloat height;
     return self;
 }
 
-- (void)setPickerData:(NSArray<NSArray *> *)pickerData{
-    if (pickerData) {
-        _pickerData = pickerData;
+
+- (void)setPickerDataCustom:(NSArray<NSArray *> *)pickerDataCustom {
+    if (pickerDataCustom) {
+        _pickerDataCustom = pickerDataCustom;
         [self.pickerView reloadAllComponents];
     }
 }
+
+
 
 - (void)setPickerMode:(TYBPickViewType)pickerMode {
     _pickerMode = pickerMode;
@@ -86,11 +89,19 @@ static CGFloat height;
             self.datepickView.datePickerMode = UIDatePickerModeCountDownTimer;
             break;
         case TYBPickViewTypeCustom:
+            
             self.datepickView.hidden = YES;
             self.pickerView.hidden = NO;
             self.pickerView.delegate = self;
             self.pickerView.dataSource = self;
             break;
+        case TYBPickViewTypeCity:
+            
+            self.datepickView.hidden = YES;
+            self.pickerView.hidden = NO;
+            self.pickerView.delegate = self;
+            self.pickerView.dataSource = self;
+            
         default:
             break;
     }
@@ -128,12 +139,27 @@ static CGFloat height;
     if (self.pickerMode == TYBPickViewTypeCustom) {
         
         NSMutableArray *result = [NSMutableArray array];
-        for (int i = 0; i < self.pickerData.count; i++) {
-            int index = (int)[self.pickerView selectedRowInComponent:i];
-            [result addObject:self.pickerData[i][index]];
+        for (int i = 0; i < self.pickerDataCustom.count; i++) {
+            NSInteger index = (int)[self.pickerView selectedRowInComponent:i];
+            [result addObject:self.pickerDataCustom[i][index]];
         }
         
-        [self.confirmDelegate pickView:self didClickButtonConfirm:result];
+        if ([self.confirmDelegate respondsToSelector:@selector(pickView:didClickButtonConfirm:)]) {
+            [self.confirmDelegate pickView:self didClickButtonConfirm:result];
+        }
+        
+    }else if(self.pickerMode == TYBPickViewTypeCity){
+     NSMutableArray *result = [NSMutableArray array];
+        for (int i = 0 ; i < self.pickerDataCity.data.count; i++) {
+            NSInteger index = [self.pickerView selectedRowInComponent:i];
+            [result addObject:self.pickerDataCity.data[i][index]];
+        }
+        if ([self.confirmDelegate respondsToSelector:@selector(pickView:didClickButtonConfirm:)]) {
+            [self.confirmDelegate pickView:self didClickButtonConfirm:result];
+        }
+       
+        
+        
     }else{
         // 时区转换
         NSDate *date=[_datepickView date];
@@ -174,15 +200,37 @@ static CGFloat height;
 
 #pragma mark --- 用户自定义时，pickerview的数据源
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.pickerData ? self.pickerData[component].count : 0;
+    if (self.pickerMode == TYBPickViewTypeCity) {
+        NSArray *array = self.pickerDataCity.data[component];
+        return  array.count;
+    }
+    return self.pickerDataCustom ? self.pickerDataCustom[component].count : 0;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return self.pickerData ? self.pickerData.count : 0;
+    if (self.pickerMode == TYBPickViewTypeCity) {
+        NSAssert(self.pickerDataCity, @"城市模式需要设置pickerDataCity属性");
+
+        return self.pickerDataCity.data.count;
+    }
+    NSAssert(self.pickerDataCustom, @"用户自定义时需要设置pickerDataCustom属性");
+    return self.pickerDataCustom ? self.pickerDataCustom.count : 0;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return self.pickerData ? self.pickerData[component][row] : nil;
+    
+    if (self.pickerMode == TYBPickViewTypeCity) {
+        return self.pickerDataCity.data[component][row];
+    }
+    return self.pickerDataCustom ? self.pickerDataCustom[component][row] : nil;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if([self.confirmDelegate respondsToSelector:@selector(pickViewCity:didSelectRow:inComponent:)]){
+          [self.confirmDelegate pickViewCity:self didSelectRow:row inComponent:component];
+    }
+  
+    [self.pickerView reloadAllComponents];
 }
 
 @end

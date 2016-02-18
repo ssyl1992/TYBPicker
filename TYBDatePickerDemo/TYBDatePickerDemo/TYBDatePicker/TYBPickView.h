@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TYBPickViewCity.h"
 
 
 typedef enum : NSUInteger {
+    TYBPickViewTypeCity, // 城市模式，方便用户更改数据源
     TYBPickViewTypeCustom, // 用户自定义,自己设置代理,自己设置数据源
     TYBPickViewTypeTime, // 时间
     TYBPickViewTypeDate, // 日期
@@ -25,6 +27,8 @@ typedef enum : NSUInteger {
 
 @optional
 - (void)pickView:(TYBPickView *)pickView didClickButtonConfirm:(id)data;
+// 城市模式的时候，用户通过这个代理来更改数据源，实现省市区的关联
+- (void)pickViewCity:(TYBPickView *)pickView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 
 @end
 
@@ -52,7 +56,8 @@ typedef enum : NSUInteger {
  *  pickerView的数据
  */
 
-@property (nonatomic, strong) NSArray<NSArray *> *pickerData;
+@property (nonatomic, strong) NSArray<NSArray *> *pickerDataCustom;
+@property (nonatomic, strong) TYBPickViewCity *pickerDataCity;
 
 /**
  *  遮罩背景颜色
@@ -84,7 +89,6 @@ typedef enum : NSUInteger {
  *  @return 行下标
  */
 - (NSInteger)selectedRowInComponent:(NSInteger)component;
-
 // Reloading whole view or single component  用户自定义时
 - (void)reloadAllComponents;
 - (void)reloadComponent:(NSInteger)component;
