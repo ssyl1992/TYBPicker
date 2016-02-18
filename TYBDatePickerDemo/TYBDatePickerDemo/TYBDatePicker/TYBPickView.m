@@ -208,7 +208,6 @@
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     if (self.pickerMode == TYBPickViewTypeCity) {
         NSAssert(self.pickerDataCity, @"城市模式需要设置pickerDataCity属性");
-
         return self.pickerDataCity.data.count;
     }
     NSAssert(self.pickerDataCustom, @"用户自定义时需要设置pickerDataCustom属性");
@@ -227,7 +226,6 @@
     if([self.confirmDelegate respondsToSelector:@selector(pickViewCity:didSelectRow:inComponent:)]){
           [self.confirmDelegate pickViewCity:self didSelectRow:row inComponent:component];
     }
-  
     [self.pickerView reloadAllComponents];
 }
 
