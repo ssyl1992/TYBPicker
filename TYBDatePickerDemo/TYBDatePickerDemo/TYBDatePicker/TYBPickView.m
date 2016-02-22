@@ -114,12 +114,30 @@
 }
 
 - (void)show {
+    
+    NSLog(@"%@",NSStringFromClass(self.confirmDelegate.superclass));
     [UIView animateWithDuration:0.3 animations:^{
         self.frame = CGRectMake(0, deviceHeight - self.height, deviceWidth, self.height);
         [self.superview insertSubview:self.maskView belowSubview:self];
-//        [self.superview bringSubviewToFront:self];
     }completion:^(BOOL finished) {
     }];
+}
+
+- (void)showInController:(id)controller {
+    
+    if ([controller tabBarController]) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.frame = CGRectMake(0, deviceHeight - self.height - 44, deviceWidth, self.height);
+            [self.superview insertSubview:self.maskView belowSubview:self];
+        }completion:^(BOOL finished) {
+        }];
+    }else {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.frame = CGRectMake(0, deviceHeight - self.height, deviceWidth, self.height);
+            [self.superview insertSubview:self.maskView belowSubview:self];
+        }completion:^(BOOL finished) {
+        }];
+    }
 }
 
 - (void)hide{

@@ -64,8 +64,10 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, strong) UIColor *maskViewColor;
 
-
-
+/**
+ *  是否是在tabbar中使用
+ */
+@property (nonatomic, assign) BOOL *inTabbar;
 
 
 - (instancetype)initWithMode:(TYBPickViewType)type target:(id<TYBPickViewDelegate>)target title:(NSString *)title;
@@ -74,6 +76,9 @@ typedef enum : NSUInteger {
  *  弹出
  */
 - (void)show;
+
+
+- (void)showInController:(id)controller;
 
 /**
  *  隐藏

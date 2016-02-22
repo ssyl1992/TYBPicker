@@ -1,57 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G4r-JI-yhe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZNf-tn-yDw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="KDd-0D-URE">
-            <objects>
-                <navigationController id="G4r-JI-yhe" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fOD-QC-UK6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="MaD-Eh-8Rw" kind="relationship" relationship="rootViewController" id="v4n-Vf-35a"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AEP-o5-YcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="655" y="-95"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="dF3-hT-XDM">
-            <objects>
-                <viewController id="MaD-Eh-8Rw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xBE-5H-jx6"/>
-                        <viewControllerLayoutGuide type="bottom" id="VZV-0h-Rcm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GJh-cB-fVo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-lf-U12">
-                                <rect key="frame" x="90" y="269" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="NAT-Ul-mmL" kind="push" id="NKR-By-TQY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="6Rp-zB-xGg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G3B-nN-LKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1068" y="-103"/>
-        </scene>
-        <!--111-->
+        <!--选择器-->
         <scene sceneID="auj-HN-EzO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jye-nM-ovV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="NAT-Ul-mmL" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T8N-N1-2xn"/>
@@ -82,12 +39,29 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95223721589999999" green="0.54060255339999996" blue="0.56934350960000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="111" id="acV-f7-vey"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="uqE-wb-aTC"/>
+                    <navigationItem key="navigationItem" title="选择器" id="acV-f7-vey"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jye-nM-ovV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453.5" y="-120.5"/>
+            <point key="canvasLocation" x="1985.5" y="-120.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pPL-xS-a3e">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ZNf-tn-yDw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="fQs-Rd-Yij">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NAT-Ul-mmL" kind="relationship" relationship="viewControllers" id="wD7-p8-A2z"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCE-IC-Xyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1426" y="-121"/>
         </scene>
     </scenes>
 </document>

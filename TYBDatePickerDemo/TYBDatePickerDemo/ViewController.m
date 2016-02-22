@@ -35,7 +35,7 @@
  
     self.picker = [[TYBPickView alloc] initWithMode:TYBPickViewTypeDateAndTime target:self title:@"时间选择"];
     [self.view addSubview:_picker];
-    [self.picker show];
+    [self.picker showInController:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +56,7 @@
 
 //    _picker.pickerDataCustom = self.cities;
     [self.view addSubview:_picker];
-    [_picker show];
+    [_picker showInController:self];
 }
 
 
@@ -72,7 +72,7 @@
 }
 
 - (void)pickViewCity:(TYBPickView *)pickView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"row=%ld com = %ld",row,component);
+//    NSLog(@"row=%ld com = %ld",row,component);
     if (component == 0 && row == 1) {
           _picker.pickerDataCity.municipalities = @[@"ccc",@"2222",@"3333"];
     }
