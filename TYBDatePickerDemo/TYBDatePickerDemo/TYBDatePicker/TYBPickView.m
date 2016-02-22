@@ -7,7 +7,7 @@
 //
 
 #import "TYBPickView.h"
-
+#import "ViewController.h"
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
 
@@ -39,6 +39,7 @@
     }
     return _maskView;
 }
+
 
 
 - (NSDictionary *)data {
@@ -116,6 +117,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.frame = CGRectMake(0, deviceHeight - self.height, deviceWidth, self.height);
         [self.superview insertSubview:self.maskView belowSubview:self];
+//        [self.superview bringSubviewToFront:self];
     }completion:^(BOOL finished) {
     }];
 }

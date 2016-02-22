@@ -14,17 +14,14 @@
 		</dict>
 		<dict>
 			<key>嘉定</key>
-			<string></string>
+			<array/>
 		</dict>
 	</array>
 	<key>北京</key>
-	<dict>
-		<key>朝阳区</key>
+	<array>
 		<dict/>
-		<key>海淀区</key>
 		<dict/>
-		<key>东城区</key>
 		<dict/>
-	</dict>
+	</array>
 </dict>
 </plist>

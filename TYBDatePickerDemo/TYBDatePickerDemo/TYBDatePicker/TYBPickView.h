@@ -58,11 +58,14 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) NSArray<NSArray *> *pickerDataCustom;
 @property (nonatomic, strong) TYBPickViewCity *pickerDataCity;
-
+@property (nonatomic, strong) NSDictionary *pickerData;
 /**
  *  遮罩背景颜色
  */
 @property (nonatomic, strong) UIColor *maskViewColor;
+
+
+
 
 
 - (instancetype)initWithMode:(TYBPickViewType)type target:(id<TYBPickViewDelegate>)target title:(NSString *)title;
