@@ -3,25 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>上海</key>
-	<array>
+	<dict>
+		<key>浦东新区</key>
 		<dict>
-			<key>浦东新区</key>
-			<array/>
+			<key>川沙</key>
+			<string></string>
+			<key>唐镇</key>
+			<string></string>
+			<key>张江</key>
+			<string></string>
 		</dict>
-		<dict>
-			<key>徐汇</key>
-			<array/>
-		</dict>
-		<dict>
-			<key>嘉定</key>
-			<array/>
-		</dict>
-	</array>
+		<key>徐汇区</key>
+		<dict/>
+		<key>黄埔区</key>
+		<dict/>
+	</dict>
 	<key>北京</key>
-	<array>
-		<dict/>
-		<dict/>
-		<dict/>
-	</array>
+	<dict/>
 </dict>
 </plist>
